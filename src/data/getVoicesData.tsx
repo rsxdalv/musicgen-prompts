@@ -20,7 +20,7 @@ const getOgg = () => fs.readdirSync(oggPath);
 const npzPath = path.join(basePath, "voice-drafts");
 const getNpzs = () => fs.readdirSync(npzPath);
 
-const baseUrlPath = process.env.BASE_URL_PATH || "/bark-speaker-directory";
+const baseUrlPath = process.env.BASE_URL_PATH || "/musicgen-prompts";
 // const baseUrlPath = "";
 
 // For each voice get voice.json file and parse it
