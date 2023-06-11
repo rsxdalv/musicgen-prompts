@@ -47,4 +47,21 @@ export interface GenerationRaw {
 
   hash?: string;
   name?: string;
+
+  // New params
+  _version: string;
+  _hash_version: string;
+  _type: string;
+  models: Models;
+
+  text: string;
+  melody?: any;
+  model: string;
+  duration: number;
+  topk: number;
+  topp: number;
+  temperature: number;
+  cfg_coef: number;
 }
+
+interface Models {}

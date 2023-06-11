@@ -65,7 +65,7 @@ export const CardBig = ({
 };
 
 export const CardGeneration = ({
-  generation: { prompt, language, history_hash, filename, date, ...rest },
+  generation: { prompt, filename, date, ...rest },
 }: {
   generation: GenerationRaw;
 }) => {
@@ -91,26 +91,10 @@ export const CardGeneration = ({
             </span>
           </h1>
         </div>
-        {/* <p className="text-gray-500">{filename}</p> */}
         <div className="flex w-full justify-between">
           <AudioPlayer audio={filename} />
           <p className="text-gray-500">{prettifyDate(date)}</p>
-          {/* {language && <Flag language={parseMetadataLanguage(language)} />} */}
         </div>
-        {/* <a
-          href={`#voices/${history_hash}`}
-          target="_blank"
-          className="text-blue-500 hover:underline"
-        >
-          Voice
-        </a> */}
-        {/* <a
-          href={`#generations/${history_hash}`}
-          target="_blank"
-          className="text-blue-500 hover:underline"
-        >
-          Generation info
-        </a> */}
         <Metadata
           prompt={prompt}
           {...rest}
