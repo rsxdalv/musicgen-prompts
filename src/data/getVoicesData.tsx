@@ -68,7 +68,10 @@ export const getMusicGenOggData = async () => {
           metadata?.native?.vorbis?.filter((x) => x.id === "DESCRIPTION")[0]
             .value || "{}"
         ),
-        filename: path.join(baseUrlPath, "ogg", ogg).split(path.sep).join("/"),
+        filename: path
+          .join(baseUrlPath, "musicgen-ogg", ogg)
+          .split(path.sep)
+          .join("/"),
       };
     } catch (error) {
       console.error(error);
