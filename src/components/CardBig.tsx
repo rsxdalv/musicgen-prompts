@@ -113,8 +113,6 @@ export const CardGeneration = ({
         </a> */}
         <Metadata
           prompt={prompt}
-          language={language || "unknown"}
-          history_hash={history_hash}
           {...rest}
         />
       </div>
@@ -154,74 +152,8 @@ export const CardVoiceNpz = ({
         </div>
         <Metadata
           prompt={prompt}
-          language={language || "unknown"}
-          history_hash={history_hash}
           {...rest}
         />
-      </div>
-    </div>
-  );
-};
-
-const HASH_OF_NONE = "6adf97f83acf6453d4a6a4b1070f3754"; // == md5("None")
-export const SectionVoice = ({
-  generation: {
-    name,
-    prompt,
-    language,
-    history_hash,
-    filename,
-    date,
-    hash,
-    ...rest
-  },
-  children,
-}: {
-  generation: GenerationRaw;
-  children: React.ReactNode;
-}) => {
-  // Detect if prompt is Japanese
-  const isJapanese = prompt.match(/[\u3040-\u309F\u30A0-\u30FF]/);
-  const maxLength = isJapanese ? 30 : 50;
-  const promptText =
-    prompt.length > maxLength ? prompt.substring(0, maxLength) + "..." : prompt;
-  const title = name || promptText;
-  // const maxLength = 100000;
-  return (
-    <div className="flex flex-col items-center justify-start w-full py-4 px-6 bg-white rounded shadow-lg">
-      <div className="flex flex-col space-y-4 w-full h-full justify-between">
-        <div className="flex w-full">
-          <h1 className="text-2xl font-bold text-gray-900">
-            <span
-              className={
-                name === undefined && prompt.length > maxLength
-                  ? "text-xl font-bold text-gray-900"
-                  : "text-2xl font-bold text-gray-900"
-              }
-            >
-              {title}
-            </span>
-          </h1>
-        </div>
-        <div className="flex w-full justify-between">
-          {hash !== HASH_OF_NONE ? (
-            <Download download={filename} />
-          ) : (
-            <div></div>
-          )}
-          <p className="text-gray-500">{prettifyDate(date)}</p>
-        </div>
-        <Metadata
-          prompt={prompt}
-          language={language || "unknown"}
-          history_hash={history_hash}
-          hash={hash}
-          {...rest}
-        />
-      </div>
-      <h1 className="text-2xl font-bold text-gray-900">Used in generations:</h1>
-      <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-        {children}
       </div>
     </div>
   );
