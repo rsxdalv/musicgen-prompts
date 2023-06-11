@@ -14,7 +14,7 @@ const getVoices = () => fs.readdirSync(voicesPath);
 const generationsPath = path.join(basePath, "generations");
 const getGenerations = () => fs.readdirSync(generationsPath);
 
-const oggPath = path.join(basePath, "ogg");
+const oggPath = path.join(basePath, "musicgen-ogg");
 const getOgg = () => fs.readdirSync(oggPath);
 
 const npzPath = path.join(basePath, "voice-drafts");
@@ -56,7 +56,7 @@ export const getVoicesData = () => {
   return voicesData;
 };
 
-export const getOggData = async () => {
+export const getMusicGenOggData = async () => {
   const ogg = getOgg();
   const oggData = ogg.map(async (ogg) => {
     const filename = path.join(oggPath, ogg);

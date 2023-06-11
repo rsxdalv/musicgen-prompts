@@ -1,17 +1,12 @@
-# Bark Speaker Directory
+# MusicGen Prompt Library
 
-This is a directory of voice prompts, also known as history prompts, to be used in Bark TTS. Additionally, there's a library of bark-generated content for preview.
+This is a library of generations for discovering new prompts to use.
 
-![Screenshot 1](./screenshots/localhost_3000_generations%20(1).png)
-![Screenshot 2](./screenshots/localhost_3000_generations%20(2).png)
+![Screenshot 1](./screenshots/localhost_3000_.png)
 
-## Adding voices
+## Adding generated sounds
 
-To add voices, see https://github.com/rsxdalv/bark-speaker-directory/pull/2
-
-## Adding bark generated sounds
-
-See https://github.com/rsxdalv/bark-speaker-directory/pull/7
+Submit a PR with an ogg file that contains embedded metadata
 
 ## Disclaimer: Responsible Use of AI Model and Prompt Sharing
 
@@ -25,7 +20,7 @@ No Fraudulent Activities: This AI model must not be used for fraudulent purposes
 
 Legal Compliance: Ensure that your use of this AI model complies with applicable laws, regulations, and policies governing AI usage, data protection, privacy, intellectual property, and any other relevant legal obligations in your jurisdiction.
 
-Suno Not Liable: Suno, the organization behind this AI model, cannot be held responsible for any misuse, unlawful activities, or negative consequences arising from the use of this AI model. Users bear the sole responsibility for their actions and the outcomes resulting from their interactions with the AI model.
+Meta Not Liable: Meta, the organization behind this AI model, cannot be held responsible for any misuse, unlawful activities, or negative consequences arising from the use of this AI model. Users bear the sole responsibility for their actions and the outcomes resulting from their interactions with the AI model.
 
 By engaging with this AI model, you acknowledge and agree to abide by these guidelines, employing the AI model in a responsible, ethical, and legal manner.
 
