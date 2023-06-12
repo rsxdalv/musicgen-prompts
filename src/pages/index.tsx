@@ -18,7 +18,7 @@ export default function Home({
         ))}
         <CardEmpty
           title="Add a new generation"
-          link="https://github.com/rsxdalv/bark-speaker-directory/pull/7"
+          link="https://github.com/rsxdalv/musicgen-prompts/pull/1"
         />
       </div>{" "}
     </Template>

@@ -65,7 +65,7 @@ export const CardBig = ({
 };
 
 export const CardGeneration = ({
-  generation: { prompt, filename, date, ...rest },
+  generation: { text: prompt, filename, date, ...rest },
 }: {
   generation: GenerationRaw;
 }) => {
@@ -95,10 +95,7 @@ export const CardGeneration = ({
           <AudioPlayer audio={filename} />
           <p className="text-gray-500">{prettifyDate(date)}</p>
         </div>
-        <Metadata
-          prompt={prompt}
-          {...rest}
-        />
+        <Metadata text={prompt} {...rest} />
       </div>
     </div>
   );
