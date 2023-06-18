@@ -62,6 +62,8 @@ export interface GenerationRaw {
   topp: number;
   temperature: number;
   cfg_coef: number;
+
+  _audiocraft_version?: string;
 }
 
 interface Models {}

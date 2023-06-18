@@ -29,6 +29,7 @@ export const Metadata = ({
   temperature,
   cfg_coef,
   melody,
+  _audiocraft_version = "0.0.1",
 }: Omit<GenerationRaw, "language" | "date" | "filename">) => (
   <div className="text-xs text-gray-500 flex flex-col w-full break-words">
     <div className="font-bold">Generation details:</div>
@@ -51,6 +52,7 @@ export const Metadata = ({
       <Row label="Top P" value={topp} />
       <Row label="Temperature" value={temperature} />
       <Row label="CFG Coef" value={cfg_coef} />
+      <Row label="Audiocraft Version" value={_audiocraft_version} />
     </div>
   </div>
 );
