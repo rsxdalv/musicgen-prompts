@@ -29,11 +29,11 @@ export const Header = ({}) => {
   return (
     <div className="flex flex-col items-center justify-center w-full p-8 bg-white rounded-lg shadow-lg">
       <h1 className="text-4xl font-bold text-center text-gray-900">
-        MusicGen Prompt Library
+        MusicGen + AudioGen Prompt Library
       </h1>
       <p className="text-md text-center text-gray-700">
         MusicGen is a simple and controllable model for music generation
-        presented by Facebook AI Research.
+        and AudioGen is for audio generation.
         <br />
         See{" "}
         <a
