@@ -5,13 +5,19 @@ import { useRouter } from "next/router";
 type Route = {
   href: string;
   text: string;
+  target?: string;
 };
 
 const routes: Route[] = [
-  //   {
-  //     href: "/",
-  //     text: "Voices",
-  //   },
+    {
+      href: "/",
+      text: "Generations",
+    },
+    {
+      href: "https://echo.ps.ai/musicgen?utm_source=musicgen_prompts",
+      text: "More Generations (Echo)",
+      target: "_blank",
+    },
   //   {
   //     href: "/generations",
   //     text: "Generations",
@@ -45,15 +51,16 @@ export const Header = ({}) => {
         for more details.
       </p>
       <p className="text-lg text-center text-gray-700">
-        {routes.map(({ href, text }) => (
+        {routes.map(({ href, text, target }, i) => (
           <React.Fragment key={href}>
             <Link
               href={href}
               className={highlightOnRoute(route, href.slice(1))}
+              target={target}
             >
               {text}
             </Link>
-            {href !== "/voice-drafts" && " | "}
+            {i < routes.length - 1 && " | "}
           </React.Fragment>
         ))}
       </p>

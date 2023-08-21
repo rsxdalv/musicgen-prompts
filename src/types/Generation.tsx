@@ -64,6 +64,7 @@ export interface GenerationRaw {
   cfg_coef: number;
 
   _audiocraft_version?: string;
+  use_multi_band_diffusion?: boolean;
 }
 
 interface Models {}

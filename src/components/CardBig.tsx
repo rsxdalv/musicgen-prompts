@@ -13,9 +13,7 @@ import { useFavorites, saveOrDeleteFromFavorites } from "./FavoritesProvider";
 import { useLocalVotes, useVotes } from "./VotesProvider";
 import { Vote } from "./Vote";
 import { MUIIcon } from "./mini/MUIIcon";
-import { GenerationRaw } from "../types/Generation";
 import { parseMetadataDate } from "./parseMetadataDate";
-import { Metadata } from "./Metadata";
 
 export const CardBig = ({
   voice: { name, audio, download, image, tags, language, author, gender },
@@ -59,43 +57,6 @@ export const CardBig = ({
           />
           <Download download={download} />
         </div>
-      </div>
-    </div>
-  );
-};
-
-export const CardGeneration = ({
-  generation: { text: prompt, filename, date, ...rest },
-}: {
-  generation: GenerationRaw;
-}) => {
-  // Detect if prompt is Japanese
-  const isJapanese = prompt.match(/[\u3040-\u309F\u30A0-\u30FF]/);
-  const maxLength = isJapanese ? 30 : 50;
-  // const maxLength = 100000;
-  return (
-    <div className="flex flex-col items-center justify-start w-full max-w-md py-4 px-6 bg-white rounded shadow-lg">
-      <div className="flex flex-col space-y-4 w-full h-full justify-between">
-        <div className="flex w-full">
-          <h1 className="text-2xl font-bold text-gray-900">
-            <span
-              className={
-                prompt.length > maxLength
-                  ? "text-xl font-bold text-gray-900"
-                  : "text-2xl font-bold text-gray-900"
-              }
-            >
-              {prompt.length > maxLength
-                ? prompt.substring(0, maxLength) + "..."
-                : prompt}
-            </span>
-          </h1>
-        </div>
-        <div className="flex w-full justify-between">
-          <AudioPlayer audio={filename} />
-          <p className="text-gray-500">{prettifyDate(date)}</p>
-        </div>
-        <Metadata text={prompt} {...rest} />
       </div>
     </div>
   );
@@ -166,7 +127,7 @@ const SaveToFavorites = ({ download }: Pick<Voice, "download">) => {
   );
 };
 
-const AudioPlayer = ({ audio }: Pick<Voice, "audio">) => {
+export const AudioPlayer = ({ audio }: Pick<Voice, "audio">) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
 
@@ -288,7 +249,7 @@ const Tags = ({ tags }: Pick<Voice, "tags">) => (
 
 const parseMetadataLanguage = (language: string) => language.toLowerCase();
 
-const prettifyDate = (date: string) => {
+export const prettifyDate = (date: string) => {
   const dateObj = parseMetadataDate(date);
   return (
     <time dateTime={date}>
