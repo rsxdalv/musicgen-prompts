@@ -14,8 +14,8 @@ const routes: Route[] = [
       text: "Generations",
     },
     {
-      href: "https://echo.ps.ai/musicgen?utm_source=musicgen_prompts",
-      text: "More Generations (Echo)",
+      href: "https://promptecho.com/musicgen?utm_source=musicgen_prompts",
+      text: "More Generations (PromptEcho)",
       target: "_blank",
     },
   //   {
