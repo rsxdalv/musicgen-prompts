@@ -9,9 +9,9 @@ export default function Document() {
       <Head>
         {!IS_ANALYTICS_DISABLED ? (
           <script
-            async
-            src="https://analytics.umami.is/script.js"
-            data-website-id="51c95383-1da6-4018-97b0-074a2006e6ed"
+            defer
+            src="https://riga.us.to/script.js"
+            data-website-id="b64a0e88-45ec-4e91-8e0a-7628b0e411b4"
           ></script>
         ) : null}
       </Head>
